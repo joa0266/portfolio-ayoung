@@ -1,4 +1,4 @@
-package com.yongback.portfolio.domain.entity
+package com.ayoung.portfolio.domain.entity
 
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
