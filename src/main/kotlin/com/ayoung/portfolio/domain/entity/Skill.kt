@@ -1,28 +1,28 @@
 package com.ayoung.portfolio.domain.entity
 
+import com.ayoung.portfolio.domain.constant.SkillType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
-import jakarta.persistence.FetchType
+import jakarta.persistence.EnumType
+import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
-import jakarta.persistence.JoinColumn
-import jakarta.persistence.ManyToOne
 
 @Entity
-class ProjectSkill(project: Project, skill: Skill) : BaseEntity() {
+class Skill(name: String, type: String, isActive: Boolean) : BaseEntity() {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "project_skill_id")
+    @Column(name = "skill_id")
     var id: Long? = null
 
-    @ManyToOne(targetEntity = Project::class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "project_id", nullable = false)
-    var project: Project = project
+    var name: String = name
 
-    @ManyToOne(targetEntity = Skill::class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "skill_id", nullable = false)
-    var skill: Skill = skill
+    @Column(name = "skill_type")
+    @Enumerated(value = EnumType.STRING)
+    var type: SkillType = SkillType.valueOf(type)
+
+    var isActive: Boolean = isActive
 
 }

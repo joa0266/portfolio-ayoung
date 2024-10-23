@@ -1,7 +1,6 @@
 package com.ayoung.portfolio.domain
 
 import com.ayoung.portfolio.domain.constant.SkillType
-import com.ayoung.portfolio.domain.entity.Account
 import com.ayoung.portfolio.domain.entity.Achievement
 import com.ayoung.portfolio.domain.entity.Experience
 import com.ayoung.portfolio.domain.entity.ExperienceDetail
@@ -11,7 +10,6 @@ import com.ayoung.portfolio.domain.entity.Project
 import com.ayoung.portfolio.domain.entity.ProjectDetail
 import com.ayoung.portfolio.domain.entity.ProjectSkill
 import com.ayoung.portfolio.domain.entity.Skill
-import com.ayoung.portfolio.domain.repository.AccountRepository
 import com.ayoung.portfolio.domain.repository.AchievementRepository
 import com.ayoung.portfolio.domain.repository.ExperienceRepository
 import com.ayoung.portfolio.domain.repository.IntroductionRepository
@@ -33,7 +31,7 @@ class DataInitializer(
     private val linkRepository: LinkRepository,
     private val projectRepository: ProjectRepository,
     private val skillRepository: SkillRepository,
-    private val accountRepository: AccountRepository
+//    private val accountRepository: AccountRepository
 ) {
 
     val log = LoggerFactory.getLogger(DataInitializer::class.java)
@@ -171,10 +169,10 @@ class DataInitializer(
         )
         projectRepository.saveAll(mutableListOf(project1, project2))
 
-        val account = Account(
-            loginId = "admin1",
-            pw = "\$2a\$10\$BWi6SLqZRJyVvJyufjTtHeYXNNhpNY9rxaVl9fBOE.1t3QF98B.cO"
-        )
-        accountRepository.save(account)
+//        val account = Account(
+//            loginId = "admin1",
+//            pw = "\$2a\$10\$BWi6SLqZRJyVvJyufjTtHeYXNNhpNY9rxaVl9fBOE.1t3QF98B.cO"
+//        )
+//        accountRepository.save(account)
     }
 }
