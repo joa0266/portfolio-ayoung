@@ -94,7 +94,6 @@ class ProjectRepositoryTest(
         println("----- findAll 테스트 종료 -----")
     }
 
-
     @Test
     fun testFindAllByIsActive() {
         println("----- findAllByIsActive 테스트 시작 -----")

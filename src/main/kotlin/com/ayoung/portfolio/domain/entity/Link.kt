@@ -1,4 +1,3 @@
-
 package com.ayoung.portfolio.domain.entity
 
 import jakarta.persistence.Column
